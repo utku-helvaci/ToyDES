@@ -26,7 +26,7 @@ def splitIntoGroups(string,length):
             temp = ""
     return results
 
-#function that takes encrypted binary and turns it into the decrypted text 
+#function that takes encrypted binary and returns decrypted binary
 def decrypt(message):
     #call the DES class
     toy = des.DES()
@@ -39,8 +39,6 @@ def decrypt(message):
         decryptedMessages.append(decryption)
     #concatenate the decryptions
     decryptedMessage ="".join(decryptedMessages)
-    #turn from binary to ASCII
-    decryptedMessage = text_from_bits(decryptedMessage)
     return decryptedMessage
 
 #function that takes an ASCII text and turns it into the encrypted binary

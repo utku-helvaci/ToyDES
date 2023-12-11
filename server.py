@@ -23,19 +23,23 @@ def Main():
             data = conn.recv(1024).decode()
             print("Received from client = " + data)
             #decrypting the other user's message
-            decryptedMessage = library.decrypt(data)
+            decryptedMessageRaw = library.decrypt(data)
+            decryptedMessage = library.text_from_bits(decryptedMessageRaw)
             if not data:
                     break
             print ("Decrypted Message = " + str(decryptedMessage))
             print("\n")
             message = input("Enter the message you want to encrypt -> ")
             #encrypting the message using DES
-            finalEncryptedMessage = library.encrypt(message)
-            print("Encrypted message = " + finalEncryptedMessage)
+            finalEncryptedMessageRaw = library.encrypt(message)
+            #prepare the unencrypted message
+            UnencryptedMessage = library.text_to_bits(message)
+            print("Encrypted message   = " + finalEncryptedMessageRaw)
+            print("Unencrypted message = " + UnencryptedMessage)
             #prints the pretty loading bar
             library.sending()
             #sending the message
-            conn.send(finalEncryptedMessage.encode())
+            conn.send(finalEncryptedMessageRaw.encode())
  
     conn.close()
      
