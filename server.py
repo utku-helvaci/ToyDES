@@ -21,14 +21,14 @@ def Main():
     while True:
             #receiving the response from the other user
             data = conn.recv(1024).decode()
-            print("Received from client = " + data)
+            print ("Received from client      = " + data)
             #decrypting the other user's message
             decryptedMessageRaw = library.decrypt(data)
             decryptedMessage = library.text_from_bits(decryptedMessageRaw)
             if not data:
                     break
-            print ("Decrypted Message in bits = " + str(decryptedMessage))
-            print ("Decrypted Message in text = " + decryptedMessageRaw)
+            print ("Decrypted Message in bits = " + decryptedMessageRaw)
+            print ("Decrypted Message in text = " + str(decryptedMessage))
             print("\n")
             message = input("Enter the message you want to encrypt -> ")
             #encrypting the message using DES
