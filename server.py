@@ -27,7 +27,8 @@ def Main():
             decryptedMessage = library.text_from_bits(decryptedMessageRaw)
             if not data:
                     break
-            print ("Decrypted Message = " + str(decryptedMessage))
+            print ("Decrypted Message in bits = " + str(decryptedMessage))
+            print ("Decrypted Message in text = " + decryptedMessageRaw)
             print("\n")
             message = input("Enter the message you want to encrypt -> ")
             #encrypting the message using DES
