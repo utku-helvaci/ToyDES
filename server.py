@@ -1,11 +1,12 @@
 import socket
-import des
 import library
 
 #this will serve as the "server" for our implementation
 
 def Main():
-    host = "127.0.0.1"
+    #virtual machine IP
+    #host = "192.168.100.221"
+    host="127.0.0.1"
     port = 5001
     #necessary to initiate the server
     mySocket = socket.socket()

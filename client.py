@@ -1,12 +1,11 @@
 import socket
-import des
-import sys
-from time import sleep
 import library
 
 # this will serve as the "client" for our implementation
 def Main():
-        host = "127.0.0.1"
+        #virtual machine IP
+        #host = "192.168.100.221"
+        host="127.0.0.1"
         port = 5001
         #necessary to connect to the server
         mySocket = socket.socket()
